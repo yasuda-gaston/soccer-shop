@@ -1,12 +1,17 @@
+import React from 'react';
 import './App.css';
-import NavBar from './component/Navbar';
-import ItemListContainer from './container/ItemListContainer';
+import NavBar from './components/NavBar';
+import ItemListContainer from './container/greeting';
 
 function App() {
+
   return (
     <div className="App">
+
       <NavBar />
       <ItemListContainer />
+
+
     </div>
   );
 }

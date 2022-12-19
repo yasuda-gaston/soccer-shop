@@ -1,0 +1,14 @@
+.navBar__list {
+    list-style: none;
+}
+
+.Logo {
+    width: 150px;
+    height: auto;
+}
+
+.navBar__listContent {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
