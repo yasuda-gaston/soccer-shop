@@ -1,16 +1,15 @@
 import React from 'react'
-import Item from '../../component/Item'
-import './style.scss'
+import './style.css';
 
-const ItemListContainer = () => {
+const ItemListContainer = ({ greeting }) => {
+    const messi = 'https://www.lavoz.com.ar/resizer/HGmf3eg8GJao9VzdK4jdxa5yNZ4=/980x640/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/DYYSZ2IZCRCHHLH6RDSEXCS4EI.jpg'
     return (
-        <div className='item-list-container'>
-            <Item title={"titulo1"} />
-            <Item title={"titulo2"} />
-            <Item title={"titulo3"} />
-            <Item title={"titulo4"} />
+        <div className='hero'>
+            <h1>{greeting}</h1>
+            <img src={messi} className='messiCampeon' alt="messi" />
         </div>
     )
 }
+
 
 export default ItemListContainer

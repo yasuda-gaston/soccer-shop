@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Counter from './components/Counter';
 import NavBar from './components/NavBar';
-import ItemListContainer from './container/greeting';
+import ItemListContainer from './container/ItemListContainer';
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
 
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer greeting={'Bienvenidos a Wakaba Soccer Shop'} />
       <Counter />
 
     </div>
