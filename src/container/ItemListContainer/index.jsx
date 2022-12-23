@@ -1,15 +1,36 @@
-import React from 'react'
-import './style.css';
+import React, { useEffect, useState } from 'react'
+import ItemList from '../../components/ItemList';
+import productos from '../../data/products.json';
 
 const ItemListContainer = ({ greeting }) => {
-    const messi = 'https://www.lavoz.com.ar/resizer/HGmf3eg8GJao9VzdK4jdxa5yNZ4=/980x640/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/DYYSZ2IZCRCHHLH6RDSEXCS4EI.jpg'
+
+    const [products, setProducts] = useState([])
+
+    //Este effect se ejecuta cuando se monta el componente
+    useEffect(() => {
+
+        const promesa = new Promise((acc, rec) => {
+            setTimeout(() => {
+                acc(productos);
+            }, 3000);
+        });
+
+        promesa
+            .then((result) => {
+                setProducts(result);
+            })
+            .catch((err) => {
+                alert("Hubo un error")
+            });
+
+    }, [])
+
     return (
-        <div className='hero'>
+        <div>
             <h1>{greeting}</h1>
-            <img src={messi} className='messiCampeon' alt="messi" />
+            <ItemList productos={products} />
         </div>
     )
 }
-
 
 export default ItemListContainer
