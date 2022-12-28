@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import ItemList from '../../components/ItemList';
 import productos from '../../data/products.json';
+import '../ItemListContainer/style.css'
 
 const ItemListContainer = ({ greeting }) => {
 
     const [products, setProducts] = useState([])
 
-    //Este effect se ejecuta cuando se monta el componente
     useEffect(() => {
 
         const promesa = new Promise((acc, rec) => {
@@ -20,15 +20,17 @@ const ItemListContainer = ({ greeting }) => {
                 setProducts(result);
             })
             .catch((err) => {
-                alert("Hubo un error")
+                alert("ERROR")
             });
 
     }, [])
 
     return (
-        <div>
+        <div className='loco'>
             <h1>{greeting}</h1>
-            <ItemList productos={products} />
+            <div className='displayFFlexxx'>
+                <ItemList productos={products} />
+            </div>
         </div>
     )
 }

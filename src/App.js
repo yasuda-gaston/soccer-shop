@@ -11,7 +11,7 @@ function App() {
 
       <NavBar />
       <ItemListContainer greeting={'Bienvenidos a Wakaba Soccer Shop'} />
-      <Counter />
+
 
     </div>
   );
