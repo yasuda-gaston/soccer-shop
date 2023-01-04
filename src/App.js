@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Counter from './components/Counter';
 import NavBar from './components/NavBar';
+import ItemDetailContainer from './container/ItemDetailContainer';
 import ItemListContainer from './container/ItemListContainer';
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
 
       <NavBar />
       <ItemListContainer greeting={'Bienvenidos a Wakaba Soccer Shop'} />
+      <ItemDetailContainer />
 
 
     </div>
