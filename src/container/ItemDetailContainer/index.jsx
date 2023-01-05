@@ -7,11 +7,11 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
 
-        fetch('https://rickandmortyapi.com/api/character/183')
+        fetch('https://rickandmortyapi.com/api/character/77')
 
-            .then((response) => {
-                console.log(response);
-                return response.json()
+            .then((result) => {
+                console.log(result);
+                return result.json()
             })
             .then((JSON) => {
                 console.log(JSON);
