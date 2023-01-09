@@ -5,8 +5,8 @@ import '../ItemList/style.css'
 const ItemList = ({ productos }) => {
   return (
     <div className='displayFlex'>
-      {productos.map(producto => {
-        return <Item product={producto} key={producto.id} />
+      {productos.map(unProducto => {
+        return <Item product={unProducto} key={unProducto.id} />
       })}
     </div>
   )

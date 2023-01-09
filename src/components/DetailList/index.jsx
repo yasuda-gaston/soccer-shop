@@ -1,11 +1,18 @@
 import React from 'react'
+import Detail from '../Detail'
 
-const ItemDetail = ({ productoSolo }) => {
+const ItemDetail = ({ productoDetalle }) => {
+    console.log(productoDetalle)
     return (
         <div>
-            <h3>{productoSolo.id}</h3>
-            <h3>{productoSolo.name}</h3>
-            <img src={productoSolo.image} alt="imagenR&M" />
+            {productoDetalle.map(unProducto => {
+                return (
+                    <Detail productoDetalle={unProducto} key={unProducto.id} />
+                )
+            }
+            )
+            }
+
         </div>
     )
 }

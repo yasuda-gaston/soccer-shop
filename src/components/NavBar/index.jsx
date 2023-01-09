@@ -1,7 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget';
 import logo from './logo.png';
-
 import './style.css'
 
 const NavBar = () => {
@@ -10,13 +10,17 @@ const NavBar = () => {
         <div className="navBar">
 
             <div className="Logo-container">
-                <a href="/#"><img src={logo} className="Logo" alt="logo" /></a>
+                <Link to='/'>
+                    <img src={logo} className="Logo" alt="logo" />
+                </Link>
+
             </div>
 
             <ul className='navBar__listContent'>
-                <a href="/#"><li className='navBar__list'>Botines</li></a>
-                <a href="/#"><li className='navBar__list'>Pelotas</li></a>
-                <a href="/#"><li className='navBar__list'>Camistas</li></a>
+
+                <Link to="/category/Camiseta">Camisetas</Link>
+                <Link to="/category/Botin">Botines</Link>
+                <Link to="/category/Pelota">Pelotas</Link>
                 <CartWidget />
             </ul>
 
