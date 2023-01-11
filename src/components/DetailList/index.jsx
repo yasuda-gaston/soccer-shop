@@ -1,4 +1,5 @@
 import React from 'react'
+import Counter from '../Counter'
 import './style.scss'
 
 const ItemDetail = ({ productoDetalle }) => {
@@ -9,6 +10,7 @@ const ItemDetail = ({ productoDetalle }) => {
             <div className="detalleDato">
                 <h5>{productoDetalle.title}</h5>
                 <h4>$ {productoDetalle.price}</h4>
+                <Counter />
             </div>
 
         </div>
