@@ -4,7 +4,7 @@ import CartWidget from '../CartWidget';
 import logo from './logo.png';
 import './style.css'
 
-const NavBar = () => {
+export default function NavBar() {
 
     return (
         <div className="navBar">
@@ -29,5 +29,3 @@ const NavBar = () => {
         </div>
     )
 }
-
-export default NavBar

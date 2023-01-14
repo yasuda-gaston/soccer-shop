@@ -1,25 +1,20 @@
 import React, { useState } from 'react'
 
-const Counter = () => {
+const ItemCount = ({ onAdd, stock }) => {
 
-    const cantStock = 3;
 
     const [count, setCount] = useState(1)
 
     const sumaUno = () => {
-        if (count >= cantStock) {
-            alert('No posee stock suficiente')
-        } else {
+        if (count < stock) {
             setCount(count + 1)
+        } else {
+            alert('no tiene stock disponible')
         }
     }
 
     const restaUno = () => {
-        if (count <= 1) {
-            setCount(1)
-        } else {
-            setCount(count - 1)
-        }
+        if (count > 1) setCount(count - 1)
     }
 
     const reset = () => {
@@ -29,11 +24,12 @@ const Counter = () => {
     return (
         <div>
             <button onClick={sumaUno}>+</button>
+            <span>{count}</span>
             <button onClick={restaUno}>-</button>
             <button onClick={reset}>Reset</button>
-            <span>{count}</span>
-        </div>
+            <button onClick={() => onAdd(count)}>CONFIRMAR</button>
+        </div >
     )
 }
 
-export default Counter
+export default ItemCount

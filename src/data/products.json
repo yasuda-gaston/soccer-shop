@@ -4,139 +4,159 @@
         "category": "Camiseta",
         "title": "Camiseta titular selección Argentina",
         "price": 109.95,
-        "image": "https://www.sskamo.co.jp/img/goods/C/HF2157.jpg"
+        "image": "https://www.sskamo.co.jp/img/goods/C/HF2157.jpg",
+        "stock": 13
     },
     {
         "id": 2,
         "category": "Camiseta",
         "title": "Camiseta suplente selección Argentina",
         "price": 22.3,
-        "image": "https://www.sskamo.co.jp/img/goods/C/HF2159.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/HF2159.JPG",
+        "stock": 1
     },
     {
         "id": 3,
         "category": "Camiseta",
         "title": "Camiseta titular selección Colombia",
         "price": 55.99,
-        "image": "https://www.sskamo.co.jp/img/goods/C/HB9170.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/HB9170.JPG",
+        "stock": 10
     },
     {
         "id": 4,
         "category": "Camiseta",
         "title": "Camiseta suplente selección Colombia",
         "price": 15.99,
-        "image": "https://www.sskamo.co.jp/img/goods/C/FI5303.jpg"
+        "image": "https://www.sskamo.co.jp/img/goods/C/FI5303.jpg",
+        "stock": 12
     },
     {
         "id": 5,
         "category": "Camiseta",
         "title": "Camiseta titular selección Alemania",
         "price": 695,
-        "image": "https://www.sskamo.co.jp/img/goods/C/HF1693.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/HF1693.JPG",
+        "stock": 10
     },
     {
         "id": 6,
         "category": "Camiseta",
         "title": "Camiseta titular selección Japón",
         "price": 168,
-        "image": "https://www.sskamo.co.jp/img/goods/C/HF1845.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/HF1845.JPG",
+        "stock": 14
     },
     {
         "id": 7,
         "category": "Camiseta",
         "title": "Camiseta titular selección Portugal",
         "price": 9.99,
-        "image": "https://www.sskamo.co.jp/img/goods/C/DN0692-628.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/DN0692-628.JPG",
+        "stock": 3
     },
     {
         "id": 8,
         "category": "Camiseta",
         "title": "Camiseta titular selección Francia",
         "price": 10.99,
-        "image": "https://www.sskamo.co.jp/img/goods/C/DN0690-410.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/DN0690-410.JPG",
+        "stock": 10
     },
     {
         "id": 9,
         "category": "Camiseta",
         "title": "Camiseta titular selección España",
         "price": 64,
-        "image": "https://www.sskamo.co.jp/img/goods/C/HE2021.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/HE2021.JPG",
+        "stock": 4
     },
     {
         "id": 10,
         "category": "Camiseta",
         "title": "Camiseta suplente selección Italia",
         "price": 109,
-        "image": "https://www.sskamo.co.jp/img/goods/C/765650-02.jpg"
+        "image": "https://www.sskamo.co.jp/img/goods/C/765650-02.jpg",
+        "stock": 10
     },
     {
         "id": 11,
         "category": "Pelota",
         "title": "Pelota mundial",
         "price": 451,
-        "image": "https://www.sskamo.co.jp/img/goods/C/AF460-NS.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/AF460-NS.JPG",
+        "stock": 6
     },
     {
         "id": 12,
         "category": "Pelota",
         "title": "Pelota UEFA",
         "price": 432,
-        "image": "https://www.sskamo.co.jp/img/goods/C/AF5400SP-NS.jpg"
+        "image": "https://www.sskamo.co.jp/img/goods/C/AF5400SP-NS.jpg",
+        "stock": 10
     },
     {
         "id": 13,
         "category": "Pelota",
         "title": "Pelota Futsal",
         "price": 232,
-        "image": "https://www.sskamo.co.jp/img/goods/C/F4L5000-YB-NS.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/F4L5000-YB-NS.JPG",
+        "stock": 7
     },
     {
         "id": 14,
         "category": "Pelota",
         "title": "Pelota J-League",
         "price": 742,
-        "image": "https://www.sskamo.co.jp/img/goods/C/AF550J-NS.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/AF550J-NS.JPG",
+        "stock": 8
     },
     {
         "id": 15,
         "category": "Pelota",
         "title": "Pelota Liga Profesional AFA",
         "price": 222,
-        "image": "https://essential.vtexassets.com/arquivos/ids/593285-1600-auto?v=637939393830200000&width=1600&height=auto&aspect=true"
+        "image": "https://essential.vtexassets.com/arquivos/ids/593285-1600-auto?v=637939393830200000&width=1600&height=auto&aspect=true",
+        "stock": 5
     },
     {
         "id": 16,
         "category": "Botin",
         "title": "Puma UltraUltimate",
         "price": 472,
-        "image": "https://www.sskamo.co.jp/img/goods/C/106868-01.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/106868-01.JPG",
+        "stock": 14
     },
     {
         "id": 17,
         "category": "Botin",
         "title": "Nike Vapor15 Edition",
         "price": 887,
-        "image": "https://www.sskamo.co.jp/img/goods/C/DJ5167-780.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/DJ5167-780.JPG",
+        "stock": 10
     },
     {
         "id": 18,
         "category": "Botin",
         "title": "Adidas Predeter Presition",
         "price": 782,
-        "image": "https://www.sskamo.co.jp/img/goods/C/ID6785.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/ID6785.JPG",
+        "stock": 1
     },
     {
         "id": 19,
         "category": "Botin",
         "title": "New Balance 442 PRO HG",
         "price": 222,
-        "image": "https://www.sskamo.co.jp/img/goods/C/MS41HWT2-2E.JPG"
+        "image": "https://www.sskamo.co.jp/img/goods/C/MS41HWT2-2E.JPG",
+        "stock": 3
     },
     {
         "id": 20,
         "category": "Botin",
         "title": "Mizuno Morelia 2 Japan",
         "price": 212,
-        "image": "https://www.sskamo.co.jp/img/goods/C/P1GA200209.jpg"
+        "image": "https://www.sskamo.co.jp/img/goods/C/P1GA200209.jpg",
+        "stock": 11
     }
 ]
