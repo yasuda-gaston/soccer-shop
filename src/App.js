@@ -13,24 +13,19 @@ function App() {
 
     <ShopProvider>
       <BrowserRouter>
-        <div className="App">
 
-          <NavBar />
+        <NavBar />
 
-          <Routes>
-            <Route path='/' element={<ItemListContainer greeting={'Bienvenidos a Wakaba Soccer Shop'} />} />
-            <Route path='*' element={<h2>RUTA NO ENCONTRADA</h2>} />
-            <Route path='/category/:categoryId' element={<ItemListContainer />} />
-            <Route path='/detail/:id' element={<ItemDetailContainer />} />
-            <Route path='/cart' element={<ItemCartContainer />} />
-
-
-
-          </Routes>
+        <Routes>
+          <Route path='/' element={<ItemListContainer greeting={'Bienvenidos a Wakaba Soccer Shop'} />} />
+          <Route path='*' element={<h2>RUTA NO ENCONTRADA</h2>} />
+          <Route path='/category/:categoryId' element={<ItemListContainer />} />
+          <Route path='/detail/:id' element={<ItemDetailContainer />} />
+          <Route path='/cart' element={<ItemCartContainer />} />
+        </Routes>
 
 
 
-        </div>
       </BrowserRouter>
     </ShopProvider>
 

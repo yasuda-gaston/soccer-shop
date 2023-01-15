@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
         const promesa = new Promise((acc, rej) => {
             setTimeout(() => {
                 acc(productos)
-            }, 1000)
+            }, 3000)
         })
 
         promesa
@@ -34,7 +34,15 @@ const ItemDetailContainer = () => {
 
     return (
         <div >
-            <ItemDetail productoDetalle={detail} />
+
+            {
+                Object.keys(detail).length === 0
+                    ?
+                    <h2>Loading... Loading...</h2>
+                    :
+                    <ItemDetail productoDetalle={detail} />
+            }
+
         </div>
     )
 }
