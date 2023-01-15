@@ -11,14 +11,18 @@ const ShopProvider = ({ children }) => {
 
     const addProduct = (product) => {
         const isInCart = isProductInCart(product.id)
+        muestro(product);
         if (isInCart) {
             const productoRepetido = products.find(element => element.id === products.id)
             productoRepetido.quantity += products.quantity
             setProducts([...products])
+            console.log([...products])
         } else {
             setProducts([...products, product])
         }
     }
+
+
 
     const countCart = () => {
         let cantidadTotal = 0;
@@ -29,7 +33,20 @@ const ShopProvider = ({ children }) => {
     }
 
     const isProductInCart = (id) => {
-        return products.some(product => product.id === id)
+        return products.some(product => product.id === id);
+
+    }
+
+    const muestro = (product) => {
+        if (products !== true) {
+            console.log({ product });//me muestra el producto
+            for (const product of products) {
+                console.log(product);
+            }
+        } else {
+            console.log('hola');
+            alert('no hay nada que mostrar')
+        }
     }
 
     return (

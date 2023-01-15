@@ -11,6 +11,7 @@ const ItemDetail = ({ productoDetalle }) => {
 
     const { addProduct } = useContext(Shop)
 
+
     const onAdd = (cantidad) => {
         console.log(`se agrego ${cantidad} de productos`)
         setQuantity(cantidad)

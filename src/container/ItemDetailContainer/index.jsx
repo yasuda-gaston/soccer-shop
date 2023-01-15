@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
         const promesa = new Promise((acc, rej) => {
             setTimeout(() => {
                 acc(productos)
-            }, 3000)
+            }, 1000)
         })
 
         promesa

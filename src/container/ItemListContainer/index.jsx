@@ -3,36 +3,36 @@ import ItemList from '../../components/ItemList';
 import '../ItemListContainer/style.css'
 import productos from '../../data/products.json'
 import { useParams } from 'react-router-dom';
-import Ad from '../../components/Ad';
+// import Ad from '../../components/Ad';
 
 
 const ItemListContainer = ({ greeting }) => {
 
     const [product, setProduct] = useState([])
 
-    const [adVisibility, setAdVisibility] = useState(true)
+    // const [adVisibility, setAdVisibility] = useState(true)
 
     const { categoryId } = useParams()
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const handleEsc = (event) => {
-            console.log(event); //Evento nativo del browser
+    //     const handleEsc = (event) => {
+    //         console.log(event); //Evento nativo del browser
 
-            if (event.keyCode === 27) {
-                console.log("will close");
-                setAdVisibility(false)
-                window.removeEventListener("keydown", handleEsc);
-            }
-        };
+    //         if (event.keyCode === 27) {
+    //             console.log("will close");
+    //             setAdVisibility(false)
+    //             window.removeEventListener("keydown", handleEsc);
+    //         }
+    //     };
 
-        window.addEventListener("keydown", handleEsc);
+    //     window.addEventListener("keydown", handleEsc);
 
-        return () => {
-            window.removeEventListener("keydown", handleEsc);
-        };
+    //     return () => {
+    //         window.removeEventListener("keydown", handleEsc);
+    //     };
 
-    }, []);
+    // }, []);
 
     useEffect(() => {
 
@@ -58,16 +58,16 @@ const ItemListContainer = ({ greeting }) => {
 
     }, [categoryId])
 
-    const handleCloseAd = (event) => {
+    // const handleCloseAd = (event) => {
 
-        console.log(event);
+    //     console.log(event);
 
-        setAdVisibility(false)
-    }
+    //     setAdVisibility(false)
+    // }
 
     return (
         <div>
-            {
+            {/* {
                 adVisibility === true
                     ?
                     <Ad>
@@ -83,7 +83,7 @@ const ItemListContainer = ({ greeting }) => {
                     </Ad>
                     :
                     null
-            }
+            } */}
             <ItemList productos={product} />
         </div>
     )
