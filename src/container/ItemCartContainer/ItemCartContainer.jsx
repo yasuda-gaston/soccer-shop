@@ -8,10 +8,13 @@ const ItemCartContainer = () => {
 
     return (
         <div>
-            <h1>PROXIMAMENTE LO PODRA OBSERVAR...</h1>
+
+            <h1>en brebe podra visualizar</h1>
+
         </div>
     )
 }
+
 
 export default ItemCartContainer
 

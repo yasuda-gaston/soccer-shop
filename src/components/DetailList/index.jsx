@@ -18,7 +18,6 @@ const ItemDetail = ({ productoDetalle }) => {
         addProduct({ ...productoDetalle, quantity: cantidad })
     }
 
-    console.log(productoDetalle.stock)
 
     return (
         <div className='detalleMuestra'>
@@ -34,8 +33,9 @@ const ItemDetail = ({ productoDetalle }) => {
                             onAdd={onAdd}
                         />
                         :
+                        //CUANDO SE CLIKEA ACA QUIERO QUE ME MUESTRE POR CONSOLA LO QUE TENGO EN CARRITO
                         <button>
-                            <Link to='/cart'>IR CARRITO</Link>
+                            <Link to='/cart' >IR CARRITO</Link>
                         </button>
                 }
 
