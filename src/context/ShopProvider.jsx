@@ -19,9 +19,10 @@ const ShopProvider = ({ children }) => {
         } else {
             setProducts([...products, product])
         }
-
+        console.log(product)
 
     }
+
 
 
 

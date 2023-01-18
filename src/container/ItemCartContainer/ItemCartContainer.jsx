@@ -1,21 +1,32 @@
 import React from 'react'
+import { useContext } from 'react'
+import { Shop } from '../../context/ShopProvider'
+import TableRow from './TableRow'
 
 const ItemCartContainer = () => {
 
-
-
-
-
+    const { products } = useContext(Shop)
     return (
-        <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">TITLE</th>
+                    <th scope="col">IMAGE</th>
+                    <th scope="col">PRICE</th>
+                    <th scope="col">QUANTITY</th>
+                    <th scope="col">REMOVE</th>
+                </tr>
+            </thead>
+            <tbody>
 
-            <h1>en brebe podra visualizar</h1>
+                {products.map(product => {
+                    return <TableRow key={product.id} product={product} />
+                })}
 
-        </div>
+            </tbody>
+        </table>
     )
 }
 
-
 export default ItemCartContainer
-
-//quiero mostrar los productos que estan en el carro (en el array)
