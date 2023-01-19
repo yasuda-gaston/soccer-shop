@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import ItemList from '../../components/ItemList';
 import '../ItemListContainer/style.css'
-import productos from '../../data/products.json'
+// import productos from '../../data/products.json'
 import { useParams } from 'react-router-dom';
+import { db } from '../../firebase/config';
+import { collection, getDocs, query, where } from "firebase/firestore";
+
 // import Ad from '../../components/Ad';
 
 
@@ -10,6 +13,7 @@ const ItemListContainer = ({ greeting }) => {
 
     const [product, setProduct] = useState([])
 
+    console.log(db);
     // const [adVisibility, setAdVisibility] = useState(true)
 
     const { categoryId } = useParams()
@@ -36,25 +40,52 @@ const ItemListContainer = ({ greeting }) => {
 
     useEffect(() => {
 
-        const promesa = new Promise((acc, rej) => {
-            setTimeout(() => {
-                acc(productos)
-            }, 1000)
-        })
+        const getProduct = async () => {
 
-        promesa
-            .then((product) => {
-                if (categoryId) {
-                    const productoCategoria = product.filter(unProducto => unProducto.category === categoryId)
-                    console.log(productoCategoria)
-                    setProduct(productoCategoria)
-                } else {
-                    setProduct(product)
+            let querySnapshot;
+            if (categoryId) {
+                const q = query(collection(db, "products"), where("category", "==", categoryId));
+                querySnapshot = await getDocs(q);
+            } else {
+                querySnapshot = await getDocs(collection(db, "products"));
+            }
+
+
+
+
+            const productosFirebase = [];
+            querySnapshot.forEach((doc) => {
+                console.log(`${doc.id} => ${doc.data()}`);
+                const product = {
+                    id: doc.id,
+                    ...doc.data()
                 }
-            })
-            .catch((erro) => {
-                alert('HUBO UN ERROR')
-            })
+                productosFirebase.push(product)
+            });
+            setProduct(productosFirebase)
+        }
+
+        getProduct()
+
+        // const promesa = new Promise((acc, rej) => {
+        //     setTimeout(() => {
+        //         acc(productos)
+        //     }, 1000)
+        // })
+
+        // promesa
+        //     .then((product) => {
+        //         if (categoryId) {
+        //             const productoCategoria = product.filter(unProducto => unProducto.category === categoryId)
+        //             console.log(productoCategoria)
+        //             setProduct(productoCategoria)
+        //         } else {
+        //             setProduct(product)
+        //         }
+        //     })
+        //     .catch((erro) => {
+        //         alert('HUBO UN ERROR')
+        //     })
 
     }, [categoryId])
 
