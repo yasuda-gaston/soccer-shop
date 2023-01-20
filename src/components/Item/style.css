@@ -1,35 +1,72 @@
 .card__container {
     width: 200px;
-    margin: 8px;
-
+    max-height: 230px;
 }
 
 .card__card {
     border-color: none;
     border-radius: 10%;
-    -webkit-box-shadow: 3px 13px 94px -15px rgba(0, 0, 0, 0.07);
-    -moz-box-shadow: 3px 13px 94px -15px rgba(0, 0, 0, 0.07);
-    box-shadow: 3px 13px 94px -15px rgba(0, 0, 0, 0.07);
+    box-shadow: 1px -6px 16px 4px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 1px -6px 16px 4px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 1px -6px 16px 4px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+}
+
+.card__card__image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 .card__image {
-    width: 200px;
+    width: 110px;
     padding: 10px;
+    transition: all 1s;
+
+}
+
+.card__image:hover {
+    width: 120px;
+}
+
+.clickDetail {
+    background-color: rgba(145, 145, 145, 0.418);
+    position: absolute;
+    color: #fff;
+    bottom: -20px;
+    left: 0;
+    text-align: center;
+    padding: 5px 0 5px;
+    width: 100%;
+    display: none;
+    box-shadow: 1px -6px 16px 4px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 1px -6px 16px 4px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 1px -6px 16px 4px rgba(0, 0, 0, 0.15);
+    transition: all 1s;
+}
+
+.card__image:hover~.clickDetail {
+    display: block;
+    opacity: 80%;
 }
 
 .card__body {
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    padding: 10px;
+    padding-top: 10px;
+    background-color: rgb(175, 175, 175);
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 20px;
+    position: relative;
+    height: 100px;
 }
 
-.boton__detail {
-    background-color: rgba(0, 0, 255, 0.402);
-    padding: 10px;
-    width: 100%;
+.card__body:nth-last-child() {
+    align-items: end;
 }
+
+
 
 .card__title {
-    font-size: smaller;
+    font-size: x-small
 }

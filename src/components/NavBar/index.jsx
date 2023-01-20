@@ -18,11 +18,13 @@ export default function NavBar() {
 
             <ul className='navBar__listContent'>
 
-                <Link to="/category/Camiseta">Camisetas</Link>
-                <Link to="/category/Botin">Botines</Link>
-                <Link to="/category/Pelota">Pelotas</Link>
-                <CartWidget />
+                <Link to="/category/Camiseta" className='navBar__Content'>Camisetas</Link>
+                <Link to="/category/Botin" className='navBar__Content'>Botines</Link>
+                <Link to="/category/Pelota" className='navBar__Content'>Pelotas</Link>
             </ul>
+            <CartWidget />
+
+
 
 
 

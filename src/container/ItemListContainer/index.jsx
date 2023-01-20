@@ -97,7 +97,7 @@ const ItemListContainer = ({ greeting }) => {
     // }
 
     return (
-        <div>
+        <div className=''>
             {/* {
                 adVisibility === true
                     ?

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Shop } from '../../context/ShopProvider'
 import logoCart from '../CartWidget/cart.svg'
+import './style.css'
 
 const CartWidget = () => {
     //Consumir el context para que me figure la cantidad de productos que tenemos en nuestro changuito
@@ -10,12 +11,12 @@ const CartWidget = () => {
 
 
     return (
-        <>
+        <div className='countCartContent'>
             <Link to='/cart'>
                 <img src={logoCart} className="cartImg" alt="cartIcon" />
             </Link>
             <span>{countCart()}</span>
-        </>
+        </div>
     )
 }
 
