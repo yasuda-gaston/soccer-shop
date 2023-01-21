@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import ItemDetail from '../../components/DetailList';
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../firebase/config';
+import './style.css'
 
 
 
@@ -58,12 +59,12 @@ const ItemDetailContainer = () => {
     }, [id])
 
     return (
-        <div >
+        <div className='detailCard'>
 
             {
                 Object.keys(detail).length === 0
                     ?
-                    <h2>Loading... Loading...</h2>
+                    <h2 className='loading'>Loading... Loading...</h2>
                     :
                     <ItemDetail productoDetalle={detail} />
             }

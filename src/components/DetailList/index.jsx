@@ -20,28 +20,33 @@ const ItemDetail = ({ productoDetalle }) => {
 
 
     return (
-        <div className='detalleMuestra'>
-            <img src={productoDetalle.image} alt={productoDetalle.title} />
-            <div className="detalleDato">
-                <h5>{productoDetalle.title}</h5>
-                <h4>$ {productoDetalle.price}</h4>
+        <div className="contenedorDetalleMuestra">
 
-                {
-                    quantity === 0 ?
-                        <ItemCount
-                            stock={productoDetalle.stock}
-                            onAdd={onAdd}
-                        />
-                        :
-                        //CUANDO SE CLIKEA ACA QUIERO QUE ME MUESTRE POR CONSOLA LO QUE TENGO EN CARRITO
-                        <button>
-                            <Link to='/cart' >IR CARRITO</Link>
-                        </button>
-                }
-
+            <div className='detalleMuestra'>
+                <div className="imagenDetail">
+                    <img src={productoDetalle.image} className="productoDetalleImagen" alt={productoDetalle.title} />
+                </div>
+                <div className="detalleDato">
+                    <h5>{productoDetalle.title}</h5>
+                    <h4>$ {productoDetalle.price}</h4>
+                    {
+                        quantity === 0 ?
+                            <ItemCount
+                                stock={productoDetalle.stock}
+                                onAdd={onAdd}
+                            />
+                            :
+                            //CUANDO SE CLIKEA ACA QUIERO QUE ME MUESTRE POR CONSOLA LO QUE TENGO EN CARRITO
+                            <button>
+                                <Link to='/cart' >IR CARRITO</Link>
+                            </button>
+                    }
+                </div>
             </div>
-
         </div>
+
+
+
     )
 
 }

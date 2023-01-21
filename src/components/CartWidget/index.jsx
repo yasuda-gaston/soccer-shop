@@ -15,7 +15,7 @@ const CartWidget = () => {
             <Link to='/cart'>
                 <img src={logoCart} className="cartImg" alt="cartIcon" />
             </Link>
-            <span>{countCart()}</span>
+            <span className='cartCounter'>{countCart()}</span>
         </div>
     )
 }

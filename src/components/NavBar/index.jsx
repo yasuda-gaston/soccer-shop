@@ -18,15 +18,30 @@ export default function NavBar() {
 
             <ul className='navBar__listContent'>
 
-                <Link to="/category/Camiseta" className='navBar__Content'>Camisetas</Link>
-                <Link to="/category/Botin" className='navBar__Content'>Botines</Link>
-                <Link to="/category/Pelota" className='navBar__Content'>Pelotas</Link>
+                <Link to="/category/Camiseta" className='navBar__Content'>
+                    <img src="assets/soccer-jersey.png" className='titleIcon' alt="jerseyIcon" />
+                    Jersey
+                </Link>
+                <Link to="/category/Botin" className='navBar__Content'>
+                    <img src="assets/soccer-shoe.png" className='titleIcon' alt="shoeIcon" />
+                    Shoe
+                </Link>
+                <Link to="/category/Pelota" className='navBar__Content'>
+                    <img src="assets/soccer-ball-variant.png" className='titleIcon' alt="ballIcon" />
+                    Ball
+                </Link>
             </ul>
-            <CartWidget />
 
+            <div className="contentSerchCart">
+                <div className="serchInput">
+                    <button type='button' className='serchButton'>
+                        <img src="assets/lupa.png" className='titleIcon' alt="lupaIcon" />
+                    </button>
+                    <input type="text" className='serchClass' placeholder='argentina' />
+                </div>
 
-
-
+                <CartWidget />
+            </div>
 
         </div>
     )

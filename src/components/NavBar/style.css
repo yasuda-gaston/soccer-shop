@@ -1,30 +1,85 @@
-.navBar__listContent {
-    margin-bottom: 0;
-}
-
 .navBar {
     position: fixed;
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: space-around;
     width: 100%;
+    height: 65px;
     align-items: center;
     font-weight: 400;
     z-index: 10;
-    background-color: blue;
+    background-color: #fff;
+    flex-wrap: wrap;
 }
 
 .Logo {
-    width: 130px;
+    width: 100px;
 }
 
+.navBar__listContent,
+.serchInput {
+    margin-bottom: 0;
+    display: flex;
+}
 
 .navBar__Content {
     padding: 0 15px;
     color: black;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: medium;
+    display: flex;
 }
 
-.navBar__Content:hover {
-    text-decoration: none;
-    font-size: 1rem;
+
+
+.titleIcon {
+    width: 25px;
+    height: 25px;
+    border: 2px #000;
+    margin-right: 5px;
+}
+
+.contentSerchCart {
+    display: flex;
+
+}
+
+
+
+.serchInput {
+    align-items: center;
+    position: relative;
+
+}
+
+.serchButton {
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    right: 20px;
+    z-index: 3;
+
+}
+
+.serchClass {
+    font-size: smaller;
+    max-height: 28px;
+    margin-right: 15px;
+    padding: 3px;
+    padding-left: 10px;
+    border-radius: 5px;
+    background-color: #eee;
+    border: 0;
+    position: relative;
+}
+
+@media only screen and (max-width: 700px) {
+    .navBar {
+        height: 130px;
+        padding: 15px;
+    }
+
+    .navBar__listContent {
+        margin: 10px;
+    }
 }
