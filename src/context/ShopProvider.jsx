@@ -12,14 +12,24 @@ const ShopProvider = ({ children }) => {
     const addProduct = (product) => {
         const isInCart = isProductInCart(product.id)
         if (isInCart) {
-            const productoRepetido = products.find(element => element.id === products.id)
-            productoRepetido.quantity += products.quantity
+            const productoRepetido = products.find(element => element.id === product.id)
+            console.log(productoRepetido);
+            productoRepetido.quantity += product.quantity
             setProducts([...products])
-            console.log([...products])
         } else {
             setProducts([...products, product])
         }
 
+    }
+
+    const removeProduct = (id) => {
+        // const productoRepetido = products.find(element => element.id === id)
+        // products.splice(productoRepetido, 0)
+        // setProducts(products)
+        // console.log(products);
+        const productoRepetido = products.filter(ele => ele.id !== id)
+        setProducts([...productoRepetido])
+        console.log(products)
     }
 
 
@@ -36,7 +46,7 @@ const ShopProvider = ({ children }) => {
     }
 
     return (
-        <Shop.Provider value={{ products, addProduct, countCart }}>
+        <Shop.Provider value={{ products, addProduct, countCart, removeProduct }}>
             {children}
         </Shop.Provider>
     )

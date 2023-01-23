@@ -27,7 +27,7 @@ const ItemDetail = ({ productoDetalle }) => {
                     <img src={productoDetalle.image} className="productoDetalleImagen" alt={productoDetalle.title} />
                 </div>
                 <div className="detalleDato">
-                    <h5>{productoDetalle.title}</h5>
+                    <h5 >{productoDetalle.title}</h5>
                     <h4>$ {productoDetalle.price}</h4>
                     {
                         quantity === 0 ?
@@ -36,10 +36,10 @@ const ItemDetail = ({ productoDetalle }) => {
                                 onAdd={onAdd}
                             />
                             :
-                            //CUANDO SE CLIKEA ACA QUIERO QUE ME MUESTRE POR CONSOLA LO QUE TENGO EN CARRITO
-                            <button>
-                                <Link to='/cart' >IR CARRITO</Link>
-                            </button>
+                            <div className='continue'>
+                                <Link to='/' className='gogoShop'>seguir comprando</Link>
+                                <Link to='/cart' className='gogo'>ir al carrito</Link>
+                            </div>
                     }
                 </div>
             </div>

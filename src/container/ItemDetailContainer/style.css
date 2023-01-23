@@ -1,3 +1,7 @@
+.detailCard {
+    padding-top: 80px;
+}
+
 .loading {
     width: 100%;
     display: flex;

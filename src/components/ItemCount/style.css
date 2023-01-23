@@ -1,0 +1,45 @@
+.counterContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.counterGroup {
+    width: 80%;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(248, 231, 231, 0.597);
+}
+
+.cantidadCount {
+    width: 100%;
+    font-size: medium;
+    margin: 0 15px;
+}
+
+.flechitas {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.confirmation {
+    width: 80%;
+    margin-top: 10px;
+}
+
+
+
+.flechitasBoton {
+    border: none;
+    padding: 0 15px;
+}
+
+.confirmationButton {
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+}

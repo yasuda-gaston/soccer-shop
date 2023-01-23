@@ -1,7 +1,3 @@
-.detailCard {
-    padding-top: 80px;
-}
-
 .contenedorDetalleMuestra {
     width: 80%;
     margin: auto;
@@ -11,23 +7,63 @@
 }
 
 .detalleMuestra {
-    min-width: 300px;
+    width: 100%;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    flex-direction: row-reverse;
     align-items: center;
-    justify-content: space-around
+    justify-content: center;
+}
+
+.imagenDetail {
+    margin-right: 15px;
 }
 
 .productoDetalleImagen {
-    min-width: 150px;
-    max-width: 300px;
+    min-width: 250px;
+    max-width: 350px;
     padding: 20px;
 }
 
 .detalleDato {
-    min-width: 300px;
     display: flex;
+    height: 100%;
     flex-direction: column;
+    justify-content: space-around;
     padding: 20px;
+    min-width: 250px;
+    width: 500px;
+}
+
+.continue {
+    width: 80%;
+    display: flex;
+    margin-top: 60px;
+    flex-direction: column;
+
+}
+
+.gogo {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: larger;
+    color: #000;
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+    border: rgba(152, 152, 152, 0.573) solid;
+    padding: 5px;
+    margin: 2px;
+}
+
+.gogoShop {
+    font-size: medium;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(231, 231, 231);
+    color: #000;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
 }

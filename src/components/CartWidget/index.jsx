@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Shop } from '../../context/ShopProvider'
-import logoCart from '../CartWidget/cart.svg'
 import './style.css'
 
 const CartWidget = () => {
@@ -13,7 +12,7 @@ const CartWidget = () => {
     return (
         <div className='countCartContent'>
             <Link to='/cart'>
-                <img src={logoCart} className="cartImg" alt="cartIcon" />
+                <img src='assets/cart.svg' className="cartImg" alt="cartIcon" />
             </Link>
             <span className='cartCounter'>{countCart()}</span>
         </div>

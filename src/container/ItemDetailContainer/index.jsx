@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-// import productos from '../../data/products.json'
 import ItemDetail from '../../components/DetailList';
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../firebase/config';
 import './style.css'
-
-
 
 
 const ItemDetailContainer = () => {
@@ -16,24 +13,6 @@ const ItemDetailContainer = () => {
     const { id } = useParams()
 
     useEffect(() => {
-
-        // const promesa = new Promise((acc, rej) => {
-        //     setTimeout(() => {
-        //         acc(productos)
-        //     }, 1000)
-        // })
-
-        // promesa
-        //     .then((product) => {
-        //         if (id) {
-        //             const productoId = product.find(unProducto => unProducto.id.toString() === id)
-        //             console.log(productoId)
-        //             setDetail(productoId)
-        //         }
-        //     })
-        //     .catch((erro) => {
-        //         alert('HUBO UN ERROR')
-        //     })
         const getProduct = async () => {
             const docRef = doc(db, "products", id);
             const docSnap = await getDoc(docRef);

@@ -2,30 +2,25 @@ import React from 'react'
 import { useContext } from 'react'
 import { Shop } from '../../context/ShopProvider'
 import TableRow from './TableRow'
+import './style.scss'
+
 
 const ItemCartContainer = () => {
 
     const { products } = useContext(Shop)
+
     return (
-        <table className="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">TITLE</th>
-                    <th scope="col">IMAGE</th>
-                    <th scope="col">PRICE</th>
-                    <th scope="col">QUANTITY</th>
-                    <th scope="col">REMOVE</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div className="tableContainer">
+            <table className="table table-striped">
+                <tbody className='tableBody'>
 
-                {products.map(product => {
-                    return <TableRow key={product.id} product={product} />
-                })}
+                    {products.map(product => {
+                        return <TableRow key={product.id} product={product} />
+                    })}
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     )
 }
 

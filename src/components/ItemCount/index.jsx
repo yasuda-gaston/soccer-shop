@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './style.css'
 
 const ItemCount = ({ onAdd, stock }) => {
 
@@ -17,17 +18,25 @@ const ItemCount = ({ onAdd, stock }) => {
         if (count > 1) setCount(count - 1)
     }
 
-    const reset = () => {
-        setCount(1)
-    }
-
     return (
         <div>
-            <button onClick={sumaUno}>+</button>
-            <span>{count}</span>
-            <button onClick={restaUno}>-</button>
-            <button onClick={reset}>Reset</button>
-            <button onClick={() => onAdd(count)}>CONFIRMAR</button>
+
+            <div className="counterGroup">
+                <span className='cantidadCount'>Cantidad {count}</span>
+
+                <div className="flechitas">
+                    <button className='flechitasBoton' onClick={sumaUno}>⏶</button>
+                    <button className='flechitasBoton' onClick={restaUno}>⏷</button>
+                </div>
+            </div>
+
+
+            <div className="confirmation">
+                <button className='confirmationButton' onClick={() => onAdd(count)}>enviar carrito</button>
+
+                {/* aca tengo q crear otro boton que me diga eliminar */}
+            </div>
+
         </div >
     )
 }
