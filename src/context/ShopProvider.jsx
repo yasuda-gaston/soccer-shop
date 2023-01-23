@@ -23,10 +23,6 @@ const ShopProvider = ({ children }) => {
     }
 
     const removeProduct = (id) => {
-        // const productoRepetido = products.find(element => element.id === id)
-        // products.splice(productoRepetido, 0)
-        // setProducts(products)
-        // console.log(products);
         const productoRepetido = products.filter(ele => ele.id !== id)
         setProducts([...productoRepetido])
         console.log(products)
@@ -45,8 +41,15 @@ const ShopProvider = ({ children }) => {
         return products.some(product => product.id === id);
     }
 
+    const cartVacio = (product) => {
+        const vacio = product.some(products.quantity === 0)
+        if (vacio){
+            <h1>esta vacio</h1>
+        }
+    }
+
     return (
-        <Shop.Provider value={{ products, addProduct, countCart, removeProduct }}>
+        <Shop.Provider value={{ products, addProduct, countCart, removeProduct, cartVacio }}>
             {children}
         </Shop.Provider>
     )
