@@ -1,123 +1,36 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react';
 import ItemList from '../../components/ItemList';
 import '../ItemListContainer/style.css'
-// import productos from '../../data/products.json'
 import { useParams } from 'react-router-dom';
-import { db } from '../../firebase/config';
-import { collection, getDocs, query, where } from "firebase/firestore";
-
-// import Ad from '../../components/Ad';
+import useFirebase from '../../Hooks/useFirebase';
 
 
-const ItemListContainer = ({ greeting }) => {
 
-    const [product, setProduct] = useState([])
-
-    console.log(db);
-    // const [adVisibility, setAdVisibility] = useState(true)
+const ItemListContainer = () => {
 
     const { categoryId } = useParams()
 
-    // useEffect(() => {
-
-    //     const handleEsc = (event) => {
-    //         console.log(event); //Evento nativo del browser
-
-    //         if (event.keyCode === 27) {
-    //             console.log("will close");
-    //             setAdVisibility(false)
-    //             window.removeEventListener("keydown", handleEsc);
-    //         }
-    //     };
-
-    //     window.addEventListener("keydown", handleEsc);
-
-    //     return () => {
-    //         window.removeEventListener("keydown", handleEsc);
-    //     };
-
-    // }, []);
-
-    useEffect(() => {
-
-        const getProduct = async () => {
-
-            let querySnapshot;
-            if (categoryId) {
-                const q = query(collection(db, "products"), where("category", "==", categoryId));
-                querySnapshot = await getDocs(q);
-            } else {
-                querySnapshot = await getDocs(collection(db, "products"));
-            }
+    const [products, loading, error] = useFirebase(categoryId)
 
 
 
-
-            const productosFirebase = [];
-            querySnapshot.forEach((doc) => {
-                console.log(`${doc.id} => ${doc.data()}`);
-                const product = {
-                    id: doc.id,
-                    ...doc.data()
-                }
-                productosFirebase.push(product)
-            });
-            setProduct(productosFirebase)
-        }
-
-        getProduct()
-
-        // const promesa = new Promise((acc, rej) => {
-        //     setTimeout(() => {
-        //         acc(productos)
-        //     }, 1000)
-        // })
-
-        // promesa
-        //     .then((product) => {
-        //         if (categoryId) {
-        //             const productoCategoria = product.filter(unProducto => unProducto.category === categoryId)
-        //             console.log(productoCategoria)
-        //             setProduct(productoCategoria)
-        //         } else {
-        //             setProduct(product)
-        //         }
-        //     })
-        //     .catch((erro) => {
-        //         alert('HUBO UN ERROR')
-        //     })
-
-    }, [categoryId])
-
-    // const handleCloseAd = (event) => {
-
-    //     console.log(event);
-
-    //     setAdVisibility(false)
-    // }
 
     return (
-        <div >
-            {/* {
-                adVisibility === true
-                    ?
-                    <Ad>
-                        <h3>Queres vender tus alhajas? Ofrecemos a nuestros clientes la máxima seguridad y el mejor precio del mercado</h3>
-                        <button
-                            style={{
-                                width: 100,
-                                padding: 8,
-                                border: '2px solid black'
-                            }}
-                            onClick={handleCloseAd}
-                        >Cerrar</button>
-                    </Ad>
+        <>
+            {error && <h1>oh! hubo un error: {error}</h1>}
+
+            {
+                loading ?
+                    <h1>cargando...</h1>
                     :
-                    null
-            } */}
-            <ItemList productos={product} />
-        </div>
+                    <ItemList productos={products} />
+            }
+            )
+
+        </>
+
     )
+
 }
 
 export default ItemListContainer

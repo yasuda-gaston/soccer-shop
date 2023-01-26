@@ -1,14 +1,57 @@
 import React from 'react'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { Shop } from '../../context/ShopProvider'
 import TableRow from './TableRow'
 import './style.scss'
 import { Link } from 'react-router-dom'
+import GenerateOrderObject from '../../services/GenerateOrderObject'
+import { db } from '../../firebase/config';
+import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
+
+
+
 
 
 const ItemCartContainer = () => {
 
-    const { products } = useContext(Shop)
+    const { products, total, clearCart } = useContext(Shop)
+
+    const [formVisi, setFormVisi] = useState(false)
+
+
+    const corfirmPurchase = async () => {
+
+        const order = GenerateOrderObject({
+            nombre: "ryo",
+            email: "ryo@gmail",
+            tel: "121212",
+            cart: products,
+            total: total()
+        })
+        console.log(order);
+        setFormVisi(true)
+
+
+
+        const docRef = await addDoc(collection(db, "orders"), order);
+        clearCart();
+
+
+        for (const productCart of products) {
+            const productRef = doc(db, "products", productCart.id);
+
+
+            await updateDoc(productRef, {
+                stock: productCart.stock - productCart.quantity
+            });
+        }
+
+        alert("orden onfirmada con ID:" + docRef.id)
+
+    }
+
+
+
 
     return (
         <div className="tableContainer">
@@ -29,6 +72,16 @@ const ItemCartContainer = () => {
 
                             </tbody>
                         </table>
+                        <button onClick={corfirmPurchase}>CONFIRMAR</button>
+                        {
+                            formVisi ?
+                                <form>
+                                    <input type="text" />
+                                </form>
+                                :
+                                null
+                        }
+
                     </div>
 
             }
