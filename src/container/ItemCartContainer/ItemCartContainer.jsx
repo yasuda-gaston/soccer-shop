@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom'
 import GenerateOrderObject from '../../services/GenerateOrderObject'
 import { db } from '../../firebase/config';
 import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
+import FormComp from '../../components/Form/FormComp'
+import Spinner from 'react-bootstrap/Spinner';
+
 
 
 
@@ -16,37 +19,50 @@ const ItemCartContainer = () => {
 
     const { products, total, clearCart } = useContext(Shop)
 
+    const [loader, setLoader] = useState(false)
+
     const [formVisi, setFormVisi] = useState(false)
 
 
-    const corfirmPurchase = async () => {
+    const corfirmPurchase = async (data) => {
 
-        const order = GenerateOrderObject({
-            nombre: "ryo",
-            email: "ryo@gmail",
-            tel: "121212",
-            cart: products,
-            total: total()
-        })
-        console.log(order);
-        setFormVisi(true)
-
-
-
-        const docRef = await addDoc(collection(db, "orders"), order);
-        clearCart();
+        const { nombre, email, phone: telefono } = data
+        try {
+            setLoader(true)
+            const order = GenerateOrderObject({
+                nombre,
+                email,
+                telefono,
+                cart: products,
+                total: total()
+            })
+            console.log(order);
+            setFormVisi(true)
 
 
-        for (const productCart of products) {
-            const productRef = doc(db, "products", productCart.id);
+
+            const docRef = await addDoc(collection(db, "orders"), order);
+            clearCart();
 
 
-            await updateDoc(productRef, {
-                stock: productCart.stock - productCart.quantity
-            });
+            for (const productCart of products) {
+                const productRef = doc(db, "products", productCart.id);
+
+
+                await updateDoc(productRef, {
+                    stock: productCart.stock - productCart.quantity
+                });
+            }
+
+            alert("orden onfirmada con ID:" + docRef.id)
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setLoader(false)
+            setFormVisi(false)
         }
 
-        alert("orden onfirmada con ID:" + docRef.id)
+
 
     }
 
@@ -72,14 +88,21 @@ const ItemCartContainer = () => {
 
                             </tbody>
                         </table>
-                        <button onClick={corfirmPurchase}>CONFIRMAR</button>
+                        {
+                            loader ?
+                                <Spinner animation="grow" variant="success" />
+                                :
+                                <button onClick={() => { setFormVisi(true) }}>CONFIRMAR</button>
+                        }
+
                         {
                             formVisi ?
-                                <form>
-                                    <input type="text" />
-                                </form>
-                                :
-                                null
+                                <FormComp
+                                    corfirmPurchase={corfirmPurchase}
+                                    formVisi={formVisi}
+                                    setFormVisi={setFormVisi}
+                                />
+                                : null
                         }
 
                     </div>

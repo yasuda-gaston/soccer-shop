@@ -3,6 +3,8 @@ import ItemList from '../../components/ItemList';
 import '../ItemListContainer/style.css'
 import { useParams } from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
+import Spinner from 'react-bootstrap/Spinner';
+
 
 
 
@@ -21,7 +23,7 @@ const ItemListContainer = () => {
 
             {
                 loading ?
-                    <h1>cargando...</h1>
+                    <Spinner animation="grow" variant="success" />
                     :
                     <ItemList productos={products} />
             }
