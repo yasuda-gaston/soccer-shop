@@ -28,41 +28,40 @@ const ItemDetail = ({ productoDetalle }) => {
 
 
     return (
-        <>
+
+        <div className="contenedorDetalleMuestra">
 
 
-            <div className="contenedorDetalleMuestra">
+            <div className='detalleMuestra'>
+                <div className="imagenDetail">
+                    <img src={productoDetalle.image} className="productoDetalleImagen" alt={productoDetalle.title} />
+                </div>
+                <div className="detalleDato">
+                    <h5 >{productoDetalle.title}</h5>
+                    <h4>$ {productoDetalle.price}</h4>
 
 
-                <div className='detalleMuestra'>
-                    <div className="imagenDetail">
-                        <img src={productoDetalle.image} className="productoDetalleImagen" alt={productoDetalle.title} />
-                    </div>
-                    <div className="detalleDato">
-                        <h5 >{productoDetalle.title}</h5>
-                        <h4>$ {productoDetalle.price}</h4>
+                    {
+                        quantity === 0 ?
+                            <ItemCount
+                                stock={productoDetalle.stock}
+                                onAdd={onAdd}
+                            />
+                            :
 
-                        {
-                            quantity === 0 ?
-                                <ItemCount
-                                    stock={productoDetalle.stock}
-                                    onAdd={onAdd}
-                                />
-                                :
+                            <div className='continue'>
+                                <Link to='/' className='gogoShop'>seguir comprando</Link>
+                                <Link to='/cart' className='gogo'>ir al carrito</Link>
+                            </div>
 
-                                <div className='continue'>
-                                    <Link to='/' className='gogoShop'>seguir comprando</Link>
-                                    <Link to='/cart' className='gogo'>ir al carrito</Link>
-                                </div>
+                    }
 
-                        }
 
-                    </div>
+
                 </div>
             </div>
+        </div>
 
-
-        </>
 
     )
 }

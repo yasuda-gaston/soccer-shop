@@ -100,7 +100,6 @@ const ItemCartContainer = () => {
                                 :
                                 <button onClick={() => { setFormVisi(true) }}>CONFIRMAR</button>
                         }
-                        {/* cerca de confirmar tiene que decir el total de todos los gastos */}
                         {
                             formVisi ?
                                 <FormComp

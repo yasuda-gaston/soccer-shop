@@ -20,13 +20,18 @@ const ItemCount = ({ onAdd, stock }) => {
         if (count > 1) setCount(count - 1)
     }
 
+    const hayStock = () => {
+        if (stock === 0) {
+            swal("no hay stock disponible, intente mas adelante.");
+        } else {
+            onAdd(count)
+        }
+    }
 
 
 
     return (
         <div>
-
-            {/* aca me tiene que decir si tengo stock o no */}
             <div className="counterGroup">
 
                 {
@@ -44,8 +49,7 @@ const ItemCount = ({ onAdd, stock }) => {
 
             <div className="confirmation">
 
-                <button className='confirmationButton' onClick={() => onAdd(count)
-                }>enviar carrito</button>
+                <button className='confirmationButton' onClick={hayStock}>enviar carrito</button>
             </div>
 
         </div >
