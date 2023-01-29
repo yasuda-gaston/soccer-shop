@@ -21,11 +21,12 @@ const ItemListContainer = () => {
         <>
             {error && <h1>oh! hubo un error: {error}</h1>}
 
+
             {
                 loading ?
-                    <Spinner animation="grow" variant="success" />
+                    <Spinner animation="border" variant="success" />
                     :
-                    <ItemList productos={products} />
+                    <ItemList productos={products} categoria={categoryId} />
             }
             )
 

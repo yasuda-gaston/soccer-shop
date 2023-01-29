@@ -5,50 +5,67 @@ import { Shop } from "../../context/ShopProvider";
 import ItemCount from '../ItemCount'
 import './style.scss'
 
+
+
 const ItemDetail = ({ productoDetalle }) => {
 
+
     const [quantity, setQuantity] = useState(0)
+
 
     const { addProduct } = useContext(Shop)
 
 
     const onAdd = (cantidad) => {
         console.log(`se agrego ${cantidad} de productos`)
+
         setQuantity(cantidad)
         addProduct({ ...productoDetalle, quantity: cantidad })
     }
 
 
-    return (
-        <div className="contenedorDetalleMuestra">
 
-            <div className='detalleMuestra'>
-                <div className="imagenDetail">
-                    <img src={productoDetalle.image} className="productoDetalleImagen" alt={productoDetalle.title} />
-                </div>
-                <div className="detalleDato">
-                    <h5 >{productoDetalle.title}</h5>
-                    <h4>$ {productoDetalle.price}</h4>
-                    {
-                        quantity === 0 ?
-                            <ItemCount
-                                stock={productoDetalle.stock}
-                                onAdd={onAdd}
-                            />
-                            :
-                            <div className='continue'>
-                                <Link to='/' className='gogoShop'>seguir comprando</Link>
-                                <Link to='/cart' className='gogo'>ir al carrito</Link>
-                            </div>
-                    }
+
+
+    return (
+        <>
+
+
+            <div className="contenedorDetalleMuestra">
+
+
+                <div className='detalleMuestra'>
+                    <div className="imagenDetail">
+                        <img src={productoDetalle.image} className="productoDetalleImagen" alt={productoDetalle.title} />
+                    </div>
+                    <div className="detalleDato">
+                        <h5 >{productoDetalle.title}</h5>
+                        <h4>$ {productoDetalle.price}</h4>
+
+                        {
+                            quantity === 0 ?
+                                <ItemCount
+                                    stock={productoDetalle.stock}
+                                    onAdd={onAdd}
+                                />
+                                :
+
+                                <div className='continue'>
+                                    <Link to='/' className='gogoShop'>seguir comprando</Link>
+                                    <Link to='/cart' className='gogo'>ir al carrito</Link>
+                                </div>
+
+                        }
+
+                    </div>
                 </div>
             </div>
-        </div>
 
 
+        </>
 
     )
-
 }
+
 
 export default ItemDetail

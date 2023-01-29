@@ -32,16 +32,9 @@ export default function NavBar() {
                 </Link>
             </ul>
 
-            <div className="contentSerchCart">
-                <div className="serchInput">
-                    <button type='button' className='serchButton'>
-                        <img src="assets/lupa.png" className='titleIcon' alt="lupaIcon" />
-                    </button>
-                    <input type="text" className='serchClass' placeholder='argentina' />
-                </div>
+            <CartWidget />
 
-                <CartWidget />
-            </div>
+
 
         </div>
     )

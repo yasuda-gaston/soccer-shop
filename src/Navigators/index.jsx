@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import ItemDetailContainer from '../container/ItemDetailContainer';
 import ItemListContainer from '../container/ItemListContainer';
+import Slider from '../components/Slider/Slider';
 
 const MainNavigator = () => {
     return (
@@ -12,8 +13,10 @@ const MainNavigator = () => {
 
             <NavBar />
 
+
             <Routes>
-                <Route path='/' element={<ItemListContainer greeting={'Bienvenidos a Wakaba Soccer Shop'} />} />
+
+                <Route path='/' element={<Slider />} />
                 <Route path='*' element={<h2>RUTA NO ENCONTRADA</h2>} />
                 <Route path='/category/:categoryId' element={<ItemListContainer />} />
                 <Route path='/detail/:id' element={<ItemDetailContainer />} />

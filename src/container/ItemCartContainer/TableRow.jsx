@@ -14,6 +14,7 @@ const TableRow = ({ product }) => {
             </td>
             <td className='productTitle'>{product.title}</td>
             <td>$ {product.price}</td>
+            <td>cantidad: {product.quantity}</td>
 
 
             <td>

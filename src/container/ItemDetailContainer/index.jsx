@@ -4,6 +4,7 @@ import ItemDetail from '../../components/DetailList';
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../firebase/config';
 import './style.css'
+import Spinner from 'react-bootstrap/Spinner';
 
 
 const ItemDetailContainer = () => {
@@ -43,7 +44,7 @@ const ItemDetailContainer = () => {
             {
                 Object.keys(detail).length === 0
                     ?
-                    <h2 className='loading'>Loading... Loading...</h2>
+                    <Spinner animation="border" variant="success" />
                     :
                     <ItemDetail productoDetalle={detail} />
             }

@@ -9,6 +9,7 @@ import { db } from '../../firebase/config';
 import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 import FormComp from '../../components/Form/FormComp'
 import Spinner from 'react-bootstrap/Spinner';
+import swal from 'sweetalert';
 
 
 
@@ -53,15 +54,15 @@ const ItemCartContainer = () => {
                     stock: productCart.stock - productCart.quantity
                 });
             }
+            swal("Gracias por su compra", "su ID de compra es: " + docRef.id, "success");
 
-            alert("orden onfirmada con ID:" + docRef.id)
+
         } catch (error) {
             console.log(error);
         } finally {
             setLoader(false)
             setFormVisi(false)
         }
-
 
 
     }
@@ -79,6 +80,7 @@ const ItemCartContainer = () => {
                     </div>
                     :
                     <div >
+
                         <table className="table table-striped">
                             <tbody className='tableBody'>
 
@@ -88,13 +90,17 @@ const ItemCartContainer = () => {
 
                             </tbody>
                         </table>
+
+                        <h1>Total a pagar $ {total()}</h1>
+
                         {
                             loader ?
-                                <Spinner animation="grow" variant="success" />
+
+                                <Spinner animation="border" variant="success" />
                                 :
                                 <button onClick={() => { setFormVisi(true) }}>CONFIRMAR</button>
                         }
-
+                        {/* cerca de confirmar tiene que decir el total de todos los gastos */}
                         {
                             formVisi ?
                                 <FormComp

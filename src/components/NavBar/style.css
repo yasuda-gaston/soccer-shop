@@ -16,7 +16,7 @@
 }
 
 .navBar__listContent,
-.serchInput {
+.searchInput {
     margin-bottom: 0;
     display: flex;
 }
@@ -39,20 +39,20 @@
     margin-right: 5px;
 }
 
-.contentSerchCart {
+.contentSearchCart {
     display: flex;
 
 }
 
 
 
-.serchInput {
+.searchInput {
     align-items: center;
     position: relative;
 
 }
 
-.serchButton {
+.searchButton {
     border: 0;
     background-color: transparent;
     position: absolute;
@@ -61,7 +61,7 @@
 
 }
 
-.serchClass {
+.searchClass {
     font-size: smaller;
     max-height: 28px;
     margin-right: 15px;
