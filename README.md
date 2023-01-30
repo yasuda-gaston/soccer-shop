@@ -1,18 +1,15 @@
 # Welcome to Wakaba Soccer Shop
 
 This project was created with react.js
-## Bootstrap
-
-In the project directory, you can run:
 
 ## Firebase
 
-Usamos Firestore database (de Firebase) para poder almacenar los productos y los ordenes de los clientes.
+We use Firestore Database (from Firebase) to be able to store products and customer orders.
 
 ## React-bootstrap
 
-Utilizamos React-bootstrap para la creacion de los formularios, slider , modal, spinner.
+We use React-bootstrap for the creation of the forms, slider, modal, spinner.
 
 ## SweetAlert
 
-Utilizamos SweetAlert para darle una alertas mas elegante al usuario.
+We use SweetAlert to give a more elegant alerts to the user.
