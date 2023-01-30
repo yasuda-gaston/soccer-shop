@@ -34,23 +34,22 @@ const FormComp = ({ corfirmPurchase, formVisi, setFormVisi }) => {
           </Modal.Header>
           <Modal.Body>
 
-
-
-            <label>Nombre</label>
+            <label>Name</label>
             <input {...register("nombre", { required: true, minLength: 2, })} />
-            {errors?.nombre?.type === "required" && <p>Debe ingresar Nombre</p>}
-            {errors?.nombre?.type === "minLength" && (<p>El nombre debe tener como minimo 2 caracteres.</p>)}
+            {errors?.nombre?.type === "required" && <p>Enter name</p>}
+            {errors?.nombre?.type === "minLength" && (<p>The name must have at least 2 characters.</p>)}
 
 
             <label>Email</label>
             <input type='email' {...register("email", { minLength: 3, required: true })} />
-            {errors?.email?.type === "minLength" && (<p>El mail tiene que tener minimo 3 caracteres</p>)}
-            {errors?.email?.type === "required" && <p>Debe ingresar Email</p>}
+            {errors?.email?.type === "minLength" && (<p>The email must have a minimum of 3 characters.</p>)}
+            {errors?.email?.type === "required" && <p>You must enter Email.</p>}
 
-            <label>Telefono</label>
+            <label>Phone</label>
             <input type='number' {...register("phone", { minLength: 10, maxLength: 10, required: true })} />
-            {errors?.phone?.type === 'minLength' && (<p>El telefono debe tener 10 digitos</p>)}
-            {errors?.phone?.type === "required" && <p>Debe ingresar telefono</p>}
+            {errors?.phone?.type === 'minLength' && (<p>The phone number  cannot be less than 10 digits.</p>)}
+            {errors?.phone?.type === 'maxLength' && (<p>The phone number cannot be more than 10 digits.</p>)}
+            {errors?.phone?.type === "required" && <p>You must enter phone number.</p>}
 
 
           </Modal.Body>
@@ -59,7 +58,7 @@ const FormComp = ({ corfirmPurchase, formVisi, setFormVisi }) => {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" type="submit">Confirmar</Button>
+            <Button variant="primary" type="submit">Cofirm</Button>
           </Modal.Footer>
 
         </form>

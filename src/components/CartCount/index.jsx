@@ -24,7 +24,7 @@ const CartCount = ({ product }) => {
 
 
             <div className="confirmation">
-                <button className='confirmationButton' onClick={remove} >eliminar producto</button>
+                <button className='confirmationButton' onClick={remove} >Remove product</button>
 
             </div>
         </div>

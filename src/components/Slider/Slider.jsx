@@ -1,22 +1,23 @@
 import React from 'react'
 
 import Carousel from 'react-bootstrap/Carousel';
-
 import ItemListContainer from '../../container/ItemListContainer';
+
 
 function Slider() {
     return (
         <>
             return (
             <Carousel>
-                <Carousel.Item interval={1000}>
+                <Carousel.Item interval={4000}>
                     <img
                         className="d-block w-100"
                         src="assets/slider0.jpg"
                         alt="First slide"
                     />
                 </Carousel.Item>
-                <Carousel.Item interval={500}>
+
+                <Carousel.Item interval={4000}>
                     <img
                         className="d-block w-100"
                         src="assets/slider1.jpg"
@@ -24,7 +25,7 @@ function Slider() {
                     />
                 </Carousel.Item>
 
-                <Carousel.Item>
+                <Carousel.Item interval={4000}>
                     <img
                         className="d-block w-100"
                         src="assets/slider2.jpg"
@@ -33,7 +34,7 @@ function Slider() {
                 </Carousel.Item>
 
 
-                <Carousel.Item>
+                <Carousel.Item interval={4000}>
                     <img
                         className="d-block w-100"
                         src="assets/slider3.jpg"
@@ -42,7 +43,7 @@ function Slider() {
                 </Carousel.Item>
 
 
-                <Carousel.Item>
+                <Carousel.Item interval={4000}>
                     <img
                         className="d-block w-100"
                         src="assets/slider4.jpg"
@@ -51,7 +52,7 @@ function Slider() {
                 </Carousel.Item>
 
 
-                <Carousel.Item>
+                <Carousel.Item interval={4000}>
                     <img
                         className="d-block w-100"
                         src="assets/slider5.jpg"
@@ -60,7 +61,7 @@ function Slider() {
                 </Carousel.Item>
 
 
-                <Carousel.Item>
+                <Carousel.Item interval={4000}>
                     <img
                         className="d-block w-100"
                         src="assets/slider6.jpg"
@@ -69,7 +70,7 @@ function Slider() {
                 </Carousel.Item>
 
 
-                <Carousel.Item>
+                <Carousel.Item interval={4000}>
                     <img
                         className="d-block w-100"
                         src="assets/slider7.jpg"
@@ -78,7 +79,7 @@ function Slider() {
                 </Carousel.Item>
 
 
-                <Carousel.Item>
+                <Carousel.Item interval={4000}>
                     <img
                         className="d-block w-100"
                         src="assets/slider8.jpg"
@@ -88,9 +89,10 @@ function Slider() {
 
 
             </Carousel>
+            <span>
+                <ItemListContainer />
+            </span>
 
-            <h2>All products</h2>
-            <ItemListContainer />
         </>
     );
 

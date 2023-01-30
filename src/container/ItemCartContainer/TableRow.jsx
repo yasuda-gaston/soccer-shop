@@ -13,8 +13,8 @@ const TableRow = ({ product }) => {
                 </Link>
             </td>
             <td className='productTitle'>{product.title}</td>
-            <td>$ {product.price}</td>
-            <td>cantidad: {product.quantity}</td>
+            <td>Price: $ {product.price}</td>
+            <td>Qty: {product.quantity}</td>
 
 
             <td>

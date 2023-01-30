@@ -18,7 +18,10 @@ import swal from 'sweetalert';
 
 const ItemCartContainer = () => {
 
-    const { products, total, clearCart } = useContext(Shop)
+
+    const { products, total, clearCart, countCart } = useContext(Shop)
+
+    console.log(countCart())
 
     const [loader, setLoader] = useState(false)
 
@@ -54,8 +57,7 @@ const ItemCartContainer = () => {
                     stock: productCart.stock - productCart.quantity
                 });
             }
-            swal("Gracias por su compra", "su ID de compra es: " + docRef.id, "success");
-
+            swal("Thank you, your order has been placed", "Your order number is: " + docRef.id, "success");
 
         } catch (error) {
             console.log(error);
@@ -67,20 +69,26 @@ const ItemCartContainer = () => {
 
     }
 
+    const plural = () => {
+
+        if (countCart() <= '1') {
+            return 'item'
+        } else {
+            return 'items'
+        }
+
+
+    }
+
+
 
 
 
     return (
         <div className="tableContainer">
             {
-                products.length === 0 ?
-                    <div className='nadaCart'>
-                        <h1 className='h1h1'>NO HAY NADA EN EL CARRO</h1>
-                        <Link className='nadaCart__link' to='/'>volver home</Link>
-                    </div>
-                    :
+                products.length !== 0 ?
                     <div >
-
                         <table className="table table-striped">
                             <tbody className='tableBody'>
 
@@ -91,14 +99,14 @@ const ItemCartContainer = () => {
                             </tbody>
                         </table>
 
-                        <h1>Total a pagar $ {total()}</h1>
+                        <h1>Subtotal ({countCart()} {plural()}): $ {total()}</h1>
 
                         {
                             loader ?
 
                                 <Spinner animation="border" variant="success" />
                                 :
-                                <button onClick={() => { setFormVisi(true) }}>CONFIRMAR</button>
+                                <button onClick={() => { setFormVisi(true) }}>Proceed to check-out</button>
                         }
                         {
                             formVisi ?
@@ -111,11 +119,19 @@ const ItemCartContainer = () => {
                         }
 
                     </div>
+                    :
+
+                    <div className='nadaCart'>
+                        <h1 className='h1h1'>No item in cart</h1>
+                        <Link className='nadaCart__link' to='/'>Back to home</Link>
+
+                    </div >
+
 
             }
 
 
-        </div>
+        </div >
 
     )
 }

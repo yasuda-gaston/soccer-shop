@@ -7,6 +7,7 @@
     flex-wrap: wrap;
 }
 
+
 @media only screen and (max-width: 700px) {
     .displayFlex {
         padding-top: 140px;

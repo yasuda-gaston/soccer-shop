@@ -50,8 +50,8 @@ const ItemDetail = ({ productoDetalle }) => {
                             :
 
                             <div className='continue'>
-                                <Link to='/' className='gogoShop'>seguir comprando</Link>
-                                <Link to='/cart' className='gogo'>ir al carrito</Link>
+                                <Link to='/home' className='gogoShop'>Continue Shopping</Link>
+                                <Link to='/cart' className='gogo'>Go to cart</Link>
                             </div>
 
                     }

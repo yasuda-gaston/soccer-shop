@@ -19,7 +19,10 @@ const ItemListContainer = () => {
 
     return (
         <>
-            {error && <h1>oh! hubo un error: {error}</h1>}
+
+
+            {error && <h1>Hey! you have an error!: {error}</h1>}
+
 
 
             {
@@ -28,7 +31,7 @@ const ItemListContainer = () => {
                     :
                     <ItemList productos={products} categoria={categoryId} />
             }
-            )
+
 
         </>
 

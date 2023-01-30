@@ -4,12 +4,13 @@ import '../Item/style.css'
 
 const Item = ({ product }) => {
   return (
+
     <div className='card__container'>
       <div className="card__card" >
         <div className="card__card__image">
           <Link to={`/detail/${product.id}`} >
             <img src={product.image} className="card__image" alt={`id-${product.id}`} />
-            <p className='clickDetail'>ver detalles</p>
+            <p className='clickDetail'>Detail</p>
           </Link>
 
         </div>

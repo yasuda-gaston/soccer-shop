@@ -12,19 +12,20 @@ const ItemList = ({ productos, categoria }) => {
       return < h2 > Shoes</h2 >
     } else if (categoria === "Pelota") {
       return < h2 > Ball</h2 >
+    } else {
+      return <h1 className='mainTitle' style={{ paddingtop: '80px' }}>ALL PRODUCTS</h1>
+
     }
   }
 
   return (
-    <>
+    <div className='displayFlex'>
+      {tituloCategoria(categoria)}
 
-      <div className='displayFlex'>
-        {tituloCategoria(categoria)}
-        {productos.map(unProducto => {
-          return <Item product={unProducto} key={unProducto.id} />
-        })}
-      </div>
-    </>
+      {productos.map(unProducto => {
+        return <Item product={unProducto} key={unProducto.id} />
+      })}
+    </div>
   )
 }
 
