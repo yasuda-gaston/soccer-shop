@@ -1,8 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { useForm } from "react-hook-form";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-
 
 const FormComp = ({ corfirmPurchase, formVisi, setFormVisi }) => {
   const {
@@ -13,7 +12,7 @@ const FormComp = ({ corfirmPurchase, formVisi, setFormVisi }) => {
 
   const onSubmit = (data) => {
     corfirmPurchase(data)
-  }; // your form submit function which will invoke after successful validation
+  };
 
   const handleClose = () => {
     setFormVisi(false)
@@ -21,7 +20,6 @@ const FormComp = ({ corfirmPurchase, formVisi, setFormVisi }) => {
 
   return (
     <>
-
       <Modal
         show={formVisi}
         onHide={handleClose}
@@ -29,11 +27,12 @@ const FormComp = ({ corfirmPurchase, formVisi, setFormVisi }) => {
         keyboard={false}
       >
         <form onSubmit={handleSubmit(onSubmit)}>
+
           <Modal.Header closeButton>
             <Modal.Title>CheckOut</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
 
+          <Modal.Body>
             <label>Name</label>
             <input {...register("nombre", { required: true, minLength: 2, })} />
             {errors?.nombre?.type === "required" && <p>Enter name</p>}
@@ -50,11 +49,9 @@ const FormComp = ({ corfirmPurchase, formVisi, setFormVisi }) => {
             {errors?.phone?.type === 'minLength' && (<p>The phone number  cannot be less than 10 digits.</p>)}
             {errors?.phone?.type === 'maxLength' && (<p>The phone number cannot be more than 10 digits.</p>)}
             {errors?.phone?.type === "required" && <p>You must enter phone number.</p>}
-
-
           </Modal.Body>
-          <Modal.Footer>
 
+          <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
@@ -64,9 +61,6 @@ const FormComp = ({ corfirmPurchase, formVisi, setFormVisi }) => {
         </form>
       </Modal>
     </>
-
-
-
   );
 }
 

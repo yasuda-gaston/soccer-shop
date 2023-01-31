@@ -11,10 +11,7 @@ import Slider from '../components/Slider/Slider';
 const MainNavigator = () => {
     return (
         <BrowserRouter>
-
             <NavBar />
-
-
             <Routes>
                 <Route path='/' element={<Slider />} />
                 <Route path='*' element={<h2 className='notFound'>RNF (Route Not Found)</h2>} />
@@ -23,10 +20,7 @@ const MainNavigator = () => {
                 <Route path='/detail/:id' element={<ItemDetailContainer />} />
                 <Route path='/cart' element={<ItemCartContainer />} />
             </Routes>
-
             <Footer />
-
-
         </BrowserRouter>
     )
 }

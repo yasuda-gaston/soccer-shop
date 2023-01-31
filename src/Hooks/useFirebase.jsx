@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from '../firebase/config';
 
-
 const useFirebase = (categoryId) => {
 
     const [products, setProducts] = useState([])
@@ -37,6 +36,7 @@ const useFirebase = (categoryId) => {
             }
 
             getProduct()
+
         } catch (error) {
             setError(error.messege)
         }

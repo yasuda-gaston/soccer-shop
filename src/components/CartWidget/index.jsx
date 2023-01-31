@@ -4,10 +4,8 @@ import { Shop } from '../../context/ShopProvider'
 import './style.css'
 
 const CartWidget = () => {
-    //Consumir el context para que me figure la cantidad de productos que tenemos en nuestro changuito
 
     const { countCart } = useContext(Shop)
-
 
     return (
         <div className='countCartContent'>

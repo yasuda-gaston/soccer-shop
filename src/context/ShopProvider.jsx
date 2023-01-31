@@ -1,6 +1,4 @@
-import { createContext } from "react";
-
-import React from 'react'
+import React, { createContext } from 'react'
 import { useState } from "react";
 
 export const Shop = createContext()
@@ -19,7 +17,6 @@ const ShopProvider = ({ children }) => {
         } else {
             setProducts([...products, product])
         }
-
     }
 
     const removeProduct = (id) => {
@@ -27,7 +24,6 @@ const ShopProvider = ({ children }) => {
         setProducts([...productoRepetido])
         console.log(products)
     }
-
 
     const countCart = () => {
         let cantidadTotal = 0;

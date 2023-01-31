@@ -4,7 +4,6 @@ import '../ItemList/style.css'
 
 const ItemList = ({ productos, categoria }) => {
 
-
   const tituloCategoria = (categoria) => {
     if (categoria === "Camiseta") {
       return < h2 > Jersey</h2 >
@@ -14,17 +13,17 @@ const ItemList = ({ productos, categoria }) => {
       return < h2 > Ball</h2 >
     } else {
       return <h1 className='mainTitle' style={{ paddingtop: '80px' }}>ALL PRODUCTS</h1>
-
     }
   }
 
   return (
-    <div className='displayFlex'>
+    <div className='itemListClass'>
       {tituloCategoria(categoria)}
-
-      {productos.map(unProducto => {
-        return <Item product={unProducto} key={unProducto.id} />
-      })}
+      <div className="itemList">
+        {productos.map(unProducto => {
+          return <Item product={unProducto} key={unProducto.id} />
+        })}
+      </div>
     </div>
   )
 }

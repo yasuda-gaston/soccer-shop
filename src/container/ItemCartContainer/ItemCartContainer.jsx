@@ -11,23 +11,12 @@ import FormComp from '../../components/Form/FormComp'
 import Spinner from 'react-bootstrap/Spinner';
 import swal from 'sweetalert';
 
-
-
-
-
-
 const ItemCartContainer = () => {
 
-
     const { products, total, clearCart, countCart } = useContext(Shop)
-
-    console.log(countCart())
-
     const [loader, setLoader] = useState(false)
-
     const [formVisi, setFormVisi] = useState(false)
-
-
+    
     const corfirmPurchase = async (data) => {
 
         const { nombre, email, phone: telefono } = data
@@ -40,18 +29,15 @@ const ItemCartContainer = () => {
                 cart: products,
                 total: total()
             })
+            //chequeo orden del usuario
             console.log(order);
             setFormVisi(true)
-
-
 
             const docRef = await addDoc(collection(db, "orders"), order);
             clearCart();
 
-
             for (const productCart of products) {
                 const productRef = doc(db, "products", productCart.id);
-
 
                 await updateDoc(productRef, {
                     stock: productCart.stock - productCart.quantity
@@ -65,8 +51,6 @@ const ItemCartContainer = () => {
             setLoader(false)
             setFormVisi(false)
         }
-
-
     }
 
     const plural = () => {
@@ -76,8 +60,6 @@ const ItemCartContainer = () => {
         } else {
             return 'items'
         }
-
-
     }
 
 

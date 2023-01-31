@@ -15,8 +15,6 @@ const TableRow = ({ product }) => {
             <td className='productTitle'>{product.title}</td>
             <td>Price: $ {product.price}</td>
             <td>Qty: {product.quantity}</td>
-
-
             <td>
                 <CartCount product={product} />
             </td>

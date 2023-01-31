@@ -17,7 +17,6 @@ const GenerateOrderObject = ({
         ,
         total: total,
         createdAd: new Date().toLocaleString()
-
     }
 }
 

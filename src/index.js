@@ -14,7 +14,6 @@ root.render(
   <ShopProvider>
     <App />
   </ShopProvider>
-
   // </React.StrictMode>
 );
 

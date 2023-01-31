@@ -6,7 +6,6 @@ import { db } from '../../firebase/config';
 import './style.css'
 import Spinner from 'react-bootstrap/Spinner';
 
-
 const ItemDetailContainer = () => {
 
     const [detail, setDetail] = useState([])
@@ -14,6 +13,7 @@ const ItemDetailContainer = () => {
     const { id } = useParams()
 
     useEffect(() => {
+
         const getProduct = async () => {
             const docRef = doc(db, "products", id);
             const docSnap = await getDoc(docRef);
@@ -30,17 +30,12 @@ const ItemDetailContainer = () => {
                 console.log("No such document!");
             }
         }
-
         getProduct();
-
-
-
 
     }, [id])
 
     return (
         <div className='detailCard'>
-
             {
                 Object.keys(detail).length === 0
                     ?
@@ -48,7 +43,6 @@ const ItemDetailContainer = () => {
                     :
                     <ItemDetail productoDetalle={detail} />
             }
-
         </div>
     )
 }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import '../Item/style.css'
 
 const Item = ({ product }) => {
+
   return (
 
     <div className='card__container'>
@@ -21,7 +22,6 @@ const Item = ({ product }) => {
         </div>
       </div>
     </div >
-
   )
 }
 

@@ -1,8 +1,11 @@
 .footer {
     background-color: rgb(99, 99, 99);
     text-align: center;
-    color: #fff;
+    color: #ebebf0;
     padding: 4px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .footerP {

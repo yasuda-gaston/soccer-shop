@@ -3,18 +3,13 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Shop } from "../../context/ShopProvider";
 import ItemCount from '../ItemCount'
-import './style.scss'
-
-
+import './style.css'
 
 const ItemDetail = ({ productoDetalle }) => {
 
-
     const [quantity, setQuantity] = useState(0)
 
-
     const { addProduct } = useContext(Shop)
-
 
     const onAdd = (cantidad) => {
         console.log(`se agrego ${cantidad} de productos`)
@@ -23,14 +18,8 @@ const ItemDetail = ({ productoDetalle }) => {
         addProduct({ ...productoDetalle, quantity: cantidad })
     }
 
-
-
-
-
     return (
-
         <div className="contenedorDetalleMuestra">
-
 
             <div className='detalleMuestra'>
                 <div className="imagenDetail">
@@ -39,8 +28,6 @@ const ItemDetail = ({ productoDetalle }) => {
                 <div className="detalleDato">
                     <h5 >{productoDetalle.title}</h5>
                     <h4>$ {productoDetalle.price}</h4>
-
-
                     {
                         quantity === 0 ?
                             <ItemCount
@@ -55,14 +42,9 @@ const ItemDetail = ({ productoDetalle }) => {
                             </div>
 
                     }
-
-
-
                 </div>
             </div>
         </div>
-
-
     )
 }
 

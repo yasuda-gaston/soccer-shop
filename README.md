@@ -6,7 +6,7 @@ This project was created with react.js
 
 We use Firestore Database (from Firebase) to be able to store products and customer orders.
 
-## React-bootstrap
+## Bootstrap / React-bootstrap 
 
 We use React-bootstrap for the creation of the forms, slider, modal, spinner.
 

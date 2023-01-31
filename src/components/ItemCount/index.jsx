@@ -6,9 +6,6 @@ import { Link } from 'react-router-dom'
 
 const ItemCount = ({ onAdd, stock }) => {
 
-
-    console.log(stock);
-
     const [count, setCount] = useState(1)
 
     const sumaUno = () => {
@@ -23,12 +20,8 @@ const ItemCount = ({ onAdd, stock }) => {
         if (count > 1) setCount(count - 1)
     }
 
-
-
-
     return (
         <div>
-
             {
                 stock === 0 ?
                     <div>
@@ -37,23 +30,15 @@ const ItemCount = ({ onAdd, stock }) => {
                     </div>
                     :
                     <div className="counterGroup">
-
                         <span className='cantidadCount'>Qty: {count}</span>
                         <div className="flechitas">
                             <button className='flechitasBoton' onClick={sumaUno}>⏶</button>
                             <button className='flechitasBoton' onClick={restaUno}>⏷</button>
                         </div>
                         <button className='confirmationButton' onClick={() => { onAdd(count) }}>Add to cart</button>
-
                     </div>
             }
-
-
-
-
         </div >
-
-
     )
 }
 
