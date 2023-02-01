@@ -2,16 +2,18 @@
 
 const GenerateOrderObject = ({
     nombre = "",
-    email = "",
-    telefono = "",
+    apellido = "",
+    elEmail = "",
+    phone = "",
     cart = [],
     total = 0
 }) => {
     return {
         buyer: {
             nombre: nombre,
-            email: email,
-            telefono: telefono,
+            apellido: apellido,
+            email: elEmail,
+            phone: phone,
         },
         item: cart
         ,

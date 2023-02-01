@@ -1,0 +1,8 @@
+.confirmationButton {
+    padding: 10px;
+    transition: all 0.5s;
+}
+
+.confirmationButton:hover {
+    background-color: #7272f8;
+}

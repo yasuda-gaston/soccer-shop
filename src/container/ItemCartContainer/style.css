@@ -1,0 +1,47 @@
+.tableContainer {
+    padding-top: 70px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.tableBody {
+    width: 100%;
+}
+
+.nadaCart {
+    text-align: center;
+    margin: 40px auto;
+    width: 100%;
+}
+
+.nadaCart__link {
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.checkOutContent {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkOutContentChild {
+    width: 330px;
+}
+
+.checkOutContent__h3 {
+    width: 100%;
+}
+
+.checkOutContent__go {
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 10px;
+    border: none;
+    transition: all 0.5s;
+    border-radius: 10px;
+}
+
+.checkOutContent__go:hover {
+    background-color: #7272f8;
+}

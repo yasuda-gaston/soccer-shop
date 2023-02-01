@@ -13,3 +13,7 @@ We use React-bootstrap for the creation of the forms, slider, modal, spinner.
 ## SweetAlert
 
 We use SweetAlert to give a more elegant alerts to the user.
+
+## react-hook-form
+
+We use react-hook-form to give dynamic style to de order form.

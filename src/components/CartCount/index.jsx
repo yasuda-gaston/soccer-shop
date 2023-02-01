@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext } from 'react';
 import { Shop } from '../../context/ShopProvider';
+import './style.css'
 
 const CartCount = ({ product }) => {
 

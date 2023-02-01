@@ -35,12 +35,10 @@ const ItemDetail = ({ productoDetalle }) => {
                                 onAdd={onAdd}
                             />
                             :
-
                             <div className='continue'>
                                 <Link to='/home' className='gogoShop'>Continue Shopping</Link>
                                 <Link to='/cart' className='gogo'>Go to cart</Link>
                             </div>
-
                     }
                 </div>
             </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext, useState } from 'react'
 import { Shop } from '../../context/ShopProvider'
 import TableRow from './TableRow'
-import './style.scss'
+import './style.css'
 import { Link } from 'react-router-dom'
 import GenerateOrderObject from '../../services/GenerateOrderObject'
 import { db } from '../../firebase/config';
@@ -16,20 +16,20 @@ const ItemCartContainer = () => {
     const { products, total, clearCart, countCart } = useContext(Shop)
     const [loader, setLoader] = useState(false)
     const [formVisi, setFormVisi] = useState(false)
-    
+
     const corfirmPurchase = async (data) => {
 
-        const { nombre, email, phone: telefono } = data
+        const { nombre, apellido, elEmail, phone } = data
         try {
             setLoader(true)
             const order = GenerateOrderObject({
                 nombre,
-                email,
-                telefono,
+                apellido,
+                elEmail,
+                phone,
                 cart: products,
                 total: total()
             })
-            //chequeo orden del usuario
             console.log(order);
             setFormVisi(true)
 
@@ -63,15 +63,12 @@ const ItemCartContainer = () => {
     }
 
 
-
-
-
     return (
         <div className="tableContainer">
             {
                 products.length !== 0 ?
                     <div >
-                        <table className="table table-striped">
+                        <table className="table-borderless">
                             <tbody className='tableBody'>
 
                                 {products.map(product => {
@@ -80,41 +77,37 @@ const ItemCartContainer = () => {
 
                             </tbody>
                         </table>
+                        <div className="checkOutContent">
+                            <div className="checkOutContentChild">
 
-                        <h1>Subtotal ({countCart()} {plural()}): $ {total()}</h1>
+                                <h5 className='checkOutContent__h3'>Subtotal ({countCart()} {plural()}): $ {total()}</h5>
 
-                        {
-                            loader ?
+                                {
+                                    loader ?
 
-                                <Spinner animation="border" variant="success" />
-                                :
-                                <button onClick={() => { setFormVisi(true) }}>Proceed to check-out</button>
-                        }
-                        {
-                            formVisi ?
-                                <FormComp
-                                    corfirmPurchase={corfirmPurchase}
-                                    formVisi={formVisi}
-                                    setFormVisi={setFormVisi}
-                                />
-                                : null
-                        }
-
+                                        <Spinner animation="border" variant="success" />
+                                        :
+                                        <button className='checkOutContent__go' onClick={() => { setFormVisi(true) }}>Proceed to check-out</button>
+                                }
+                                {
+                                    formVisi ?
+                                        <FormComp
+                                            corfirmPurchase={corfirmPurchase}
+                                            formVisi={formVisi}
+                                            setFormVisi={setFormVisi}
+                                        />
+                                        : null
+                                }
+                            </div>
+                        </div>
                     </div>
                     :
-
                     <div className='nadaCart'>
                         <h1 className='h1h1'>No item in cart</h1>
                         <Link className='nadaCart__link' to='/'>Back to home</Link>
-
                     </div >
-
-
             }
-
-
         </div >
-
     )
 }
 

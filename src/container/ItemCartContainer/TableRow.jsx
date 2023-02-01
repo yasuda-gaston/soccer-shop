@@ -1,6 +1,6 @@
 import React from 'react'
 import CartCount from '../../components/CartCount'
-import './styleTable.scss'
+import './styleTable.css'
 import { Link } from 'react-router-dom';
 
 const TableRow = ({ product }) => {
